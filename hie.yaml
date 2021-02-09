@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "ComposingTypes:lib"
+
+    - path: "./app/Main.hs"
+      component: "ComposingTypes:exe:ComposingTypes-exe"
+
+    - path: "./app/Paths_ComposingTypes.hs"
+      component: "ComposingTypes:exe:ComposingTypes-exe"
+
+    - path: "./test"
+      component: "ComposingTypes:test:ComposingTypes-test"
