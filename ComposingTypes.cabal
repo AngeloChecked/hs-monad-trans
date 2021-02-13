@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 652651ca1b982756deaccdf2a0d1096978de5fdf7c1bf08ea745a81964e2d472
+-- hash: 88532f59f35d198558c0f95d7e8f010f4e79a87043600c6a386c33e326b29597
 
 name:           ComposingTypes
 version:        0.1.0.0
@@ -13,6 +13,7 @@ build-type:     Simple
 library
   exposed-modules:
       ComposingType
+      MonadTransformers
   other-modules:
       Paths_ComposingTypes
   hs-source-dirs:
@@ -27,6 +28,7 @@ test-suite ComposingTypes-test
   main-is: Spec.hs
   other-modules:
       ComposingTypeSpec
+      MonadTransformersSpec
       Paths_ComposingTypes
   hs-source-dirs:
       test
