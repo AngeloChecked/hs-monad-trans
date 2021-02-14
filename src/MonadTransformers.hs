@@ -184,12 +184,23 @@ instance (Functor m) => Functor (StateT s m) where
 instance (Monad m) => Applicative (StateT s m ) where
        pure a = StateT $ \s -> pure (a,s) 
 
-       (StateT f) <*> (StateT smas) = 
-           StateT $ (\s ->
-              let mas = smas s
-                  ff = f s
-                  fff = (<*>) <$> ff 
-              in fff <*> mas 
-           )
+       (StateT smab) <*> (StateT sma) = 
+           StateT $ \s -> do 
+               (ab, s') <- smab s
+               (\(a,s'') -> (ab a, s'')) <$> sma s' 
 
+instance (Monad m) => Monad (StateT s m) where
+        return = pure 
 
+        (StateT sma) >>= f = StateT $ \s -> do 
+                            (a,s') <- sma s 
+                            runStateT (f a) s' 
+
+newtype RWST r w s m a =
+    RWST { runRWST :: r -> s -> m (a,s,w) }
+
+type MyIdentity a = IdentityT Identity a
+type Maybe a = MaybeT Identity a
+type Either e a = EitherT e Identity a
+type Reader r a = ReaderT r Identity a 
+type State s a = StateT s Identity a
