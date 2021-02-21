@@ -1,7 +1,7 @@
 module ExerciseSpec where
 
 import Test.Hspec 
-import Exercise
+import Exercise ( rDec, rPrintAndInc, rShow, sPrintIncAccum )
 import Control.Monad.Trans.Reader
 import Control.Monad.Trans.State
 import Control.Monad.IO.Class

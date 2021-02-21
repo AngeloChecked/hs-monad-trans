@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ec170a7521ecfc91b0412fc2dc4e5d125b493b06d8851ce2b8b9942d0ee4a950
+-- hash: 1e72e8cd01552b25b404020d7c53cd287b0bd9d1c8f2bf7b28c4c94112efe91a
 
 name:           ComposingTypes
 version:        0.1.0.0
@@ -17,6 +17,7 @@ library
       Fix
       LiftMore
       MonadTransformers
+      Morra
       OuterInner
       Scotty
       ScottyTypes

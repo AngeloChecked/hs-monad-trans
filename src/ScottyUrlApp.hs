@@ -48,3 +48,5 @@ main = do
     let config = Config counter "pefix"
         runR r = runReaderT r config 
     scottyT 3000 runR app
+
+    
