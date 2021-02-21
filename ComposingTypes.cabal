@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0ef096730da76f9abe3852c44356fb1772ae579487dd32c49d5aeea71733d072
+-- hash: ec170a7521ecfc91b0412fc2dc4e5d125b493b06d8851ce2b8b9942d0ee4a950
 
 name:           ComposingTypes
 version:        0.1.0.0
@@ -13,15 +13,24 @@ build-type:     Simple
 library
   exposed-modules:
       ComposingType
+      Exercise
+      Fix
+      LiftMore
       MonadTransformers
       OuterInner
+      Scotty
+      ScottyTypes
+      ScottyUrlApp
   other-modules:
       Paths_ComposingTypes
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , containers
     , hspec
+    , scotty
+    , text
     , transformers
   default-language: Haskell2010
 
@@ -29,8 +38,7 @@ test-suite ComposingTypes-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      ComposingTypeSpec
-      MonadTransformersSpec
+      ExerciseSpec
       Paths_ComposingTypes
   hs-source-dirs:
       test
@@ -38,6 +46,9 @@ test-suite ComposingTypes-test
   build-depends:
       ComposingTypes
     , base >=4.7 && <5
+    , containers
     , hspec
+    , scotty
+    , text
     , transformers
   default-language: Haskell2010

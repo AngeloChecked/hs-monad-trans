@@ -198,9 +198,3 @@ instance (Monad m) => Monad (StateT s m) where
 
 newtype RWST r w s m a =
     RWST { runRWST :: r -> s -> m (a,s,w) }
-
-type MyIdentity a = IdentityT Identity a
-type Maybe a = MaybeT Identity a
-type Either e a = EitherT e Identity a
-type Reader r a = ReaderT r Identity a 
-type State s a = StateT s Identity a
