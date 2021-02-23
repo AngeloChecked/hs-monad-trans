@@ -46,7 +46,8 @@ main :: IO ()
 main = do
     counter <- newIORef M.empty
     let config = Config counter "pefix"
-        runR r = runReaderT r config 
+      --  runR r = runReaderT r config 
+        runR (ReaderT r) = r config
     scottyT 3000 runR app
 
     

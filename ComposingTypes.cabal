@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1e72e8cd01552b25b404020d7c53cd287b0bd9d1c8f2bf7b28c4c94112efe91a
+-- hash: cc7c4ad52d52d5b866b79366c9097f0b69fd24524d40f0b218450dd0cdbb848d
 
 name:           ComposingTypes
 version:        0.1.0.0
@@ -30,6 +30,7 @@ library
       base >=4.7 && <5
     , containers
     , hspec
+    , random
     , scotty
     , text
     , transformers
@@ -49,6 +50,7 @@ test-suite ComposingTypes-test
     , base >=4.7 && <5
     , containers
     , hspec
+    , random
     , scotty
     , text
     , transformers
